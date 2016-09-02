@@ -31,7 +31,7 @@ struct FunctionInfo<R(Args...)>
     struct Parameter
     {
         static_assert(args_count != 0 && ParameterIndex < args_count - 1, "Non-existent function parameter index");
-        using type = std::tuple_element_t<ParameterIndex, std::tuple<Args...>>;
+        using type = std::tuple_element<ParameterIndex, std::tuple<Args...>>;
     };
 };
 
